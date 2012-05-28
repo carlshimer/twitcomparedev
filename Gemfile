@@ -52,3 +52,4 @@ gem 'hirb'
 gem 'twitter'
 # for use with the twitter gem
 gem 'oj' 
+gem 'haml'
