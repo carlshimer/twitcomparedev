@@ -57,7 +57,11 @@ Twitcomparedev::Application.routes.draw do
   # match ':controller(/:action(/:id))(.:format)'
 
   resources :compare do
-    get :main
+
+    collection do 
+      get :data
+      get :main
+    end
   end
 
   root :to => "compare#main"

@@ -14,6 +14,9 @@ body {
     
 }
 
+// space agey I guess
+input { border-radius:12px }
+
 #background {
     position:absolute;
     height:100%;
@@ -47,3 +50,20 @@ h1 {
 
 label { width:140px; float: left; }
 .clear { clear:both }
+
+#comparecontent {
+    margin-top:20px;
+}
+
+.statblock {
+    float:left;
+    width:200px;
+}
+
+.statblock .profile {
+    padding-bottom:20px;
+}
+
+.header p {
+    text-transform:uppercase;
+}

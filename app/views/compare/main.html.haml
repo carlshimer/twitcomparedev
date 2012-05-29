@@ -2,8 +2,9 @@
 %head
   %link{:href=>"http://fonts.googleapis.com/css?family=Comfortaa:400,700,300",:rel=>'stylesheet',:type=>'text/css'}
   = stylesheet_link_tag 'compare'
-  = javascript_include_tag 'compare'
   %script{:type=>"application/javscript",:src=>"http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"}
+  = javascript_include_tag 'compare'
+
 %body
   #background
     #container
@@ -14,13 +15,14 @@
           .compareline
             %label
               Twitter user #1
-            %input{:type=>:text}
+            %input{:type=>:text,:id=>:input1,:value=>"scalzi"}
             .clear
           .compareline
             %label
               Twitter user #2
-            %input{:type=>:text}
+            %input{:type=>:text,:id=>:input2,:value=>"fredwilson"}
             .clear
         .comparesec
-          %input{:type=>:button,:value=>"Compare"}
-        
+          %input{:type=>:button,:value=>"Compare",:id=>:comparebutton}
+      .clear
+      #comparecontent
