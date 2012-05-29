@@ -1,0 +1,49 @@
+// Place all the styles related to the compare controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+    font-family: 'Comfortaa', cursive;
+    //background: -webkit-linear-gradient(left, #2F2727, #1a82f7);
+    height:100%;
+    width:100%;
+    overflow:hidden;
+    margin:0;
+    padding:0;
+    text-shadow: 3px 3px 3px #888;
+    
+}
+
+#background {
+    position:absolute;
+    height:100%;
+    width:100%;
+    margin:0;padding:0;
+    background: -webkit-linear-gradient(top, #eff6fb, #ace4f3);
+    //background: -webkit-linear-gradient(top, #2F2727, #1a82f7);
+}
+
+#container {
+    width:1000px;
+    margin:0px auto;
+
+}
+
+
+h1 {
+    font-size:36px;
+    color:green;
+    font-weight:bold;
+    text-shadow: 2px 2px 2px #000;
+    text-transform:uppercase;
+    letter-spacing:3px;
+}
+
+.compareline { padding-bottom:10px }
+.compareentry { float:left }
+.comparesec {
+    padding-top:10px;
+}
+
+label { width:140px; float: left; }
+.clear { clear:both }

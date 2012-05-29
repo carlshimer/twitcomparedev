@@ -1,0 +1,26 @@
+!!! 5
+%head
+  %link{:href=>"http://fonts.googleapis.com/css?family=Comfortaa:400,700,300",:rel=>'stylesheet',:type=>'text/css'}
+  = stylesheet_link_tag 'compare'
+  = javascript_include_tag 'compare'
+  %script{:type=>"application/javscript",:src=>"http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"}
+%body
+  #background
+    #container
+      %h1
+        TwitCompare
+      .compareform
+        .compareentry
+          .compareline
+            %label
+              Twitter user #1
+            %input{:type=>:text}
+            .clear
+          .compareline
+            %label
+              Twitter user #2
+            %input{:type=>:text}
+            .clear
+        .comparesec
+          %input{:type=>:button,:value=>"Compare"}
+        
