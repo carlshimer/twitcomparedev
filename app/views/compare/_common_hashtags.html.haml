@@ -1,0 +1,6 @@
+%p.small Common hashtags
+- for tag in @common_hashtags
+  %p
+    %a{:href=>"https://twitter.com/#!/search/%23#{tag}",:target=>"_twitwin"}= tag
+    
+    

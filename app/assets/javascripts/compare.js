@@ -26,6 +26,12 @@ function loader() {
   // TODO: look up users from URL args.
   $("a.complink").pjax("#comparecontent");
   $("#comparebutton").click(onCompare);
+  $("#swapbutton").click(function() {
+                           var tmp = $("#input1").attr("value");
+                           $("#input1").attr("value",$("#input2").attr("value"));
+                           $("#input2").attr("value",tmp);
+                           onCompare();
+                         });
   
   $(document).
     on('pjax:start',function() { $("#spinner").show(); }).
@@ -39,8 +45,8 @@ function loader() {
        });
 
 
-  // 45 second timeout. yeah we are doing a bunch of network stuff.
-  $.pjax.defaults.timeout = 45000;
+  // 1 minute timeout. yeah we are doing a bunch of network stuff.
+  $.pjax.defaults.timeout = 60000;
 
 };
 

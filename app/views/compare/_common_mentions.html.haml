@@ -1,6 +1,6 @@
-%p.small Showing the first 50 followers.
+%p.small Common mentions
 %p
-  - for user in users_for(@common_followers,"#{@uniq_tag}_followers")
+  - for user in users_for(@common_mentions,"#{@uniq_tag}_mentions")
     .follower-line
       %a{:href=>"/compare/data?user1=#{params['user1']}&user2=#{user.screen_name}",:class=>"complink"}
         %img{:src=>"#{user.profile_image_url}"}

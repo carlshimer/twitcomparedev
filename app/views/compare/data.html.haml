@@ -1,5 +1,14 @@
 #maincomparecontent
-  = render :partial => "common_followers"
+  - if params["view"] == "common_followers"
+    = render :partial => "common_followers"
+  - elsif params["view"] == "friends"
+    = render :partial => "common_friends"
+  - elsif params["view"] == "common_mentions"
+    = render :partial => "common_mentions"
+  - elsif params["view"] == "common_hashtags"
+    = render :partial => "common_hashtags"
+  - else
+    = render :partial => "common_friends"    
 
 #sidebar
   .comparesection
@@ -35,8 +44,17 @@
       %p hashtags
     .statblock
       %p &nbsp;
-      %p= @common_followers.length
-      %p= @common_friends.length
-      %p= @common_mentions.length
-      %p= @common_hashtags.length
+      - # yes yes could use the foo_url methods
+      %p
+        %a{:href=>"/compare/data?user1=#{params['user1']}&user2=#{params['user2']}&view=common_followers",:class=>"complink"}
+          %span= @common_followers.length
+      %p
+        %a{:href=>"/compare/data?user1=#{params['user1']}&user2=#{params['user2']}&view=common_friends",:class=>"complink"}        
+          %span= @common_friends.length
+      %p
+        %a{:href=>"/compare/data?user1=#{params['user1']}&user2=#{params['user2']}&view=common_mentions",:class=>"complink"}        
+          %span= @common_mentions.length
+      %p
+        %a{:href=>"/compare/data?user1=#{params['user1']}&user2=#{params['user2']}&view=common_hashtags",:class=>"complink"}        
+          %span= @common_hashtags.length
 

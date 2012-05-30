@@ -1,5 +1,6 @@
 module CompareHelper
   def users_for(twitter_ids,tag)
+    return [] if twitter_ids.length == 0
     Rails.cache.fetch(:tag=>tag) do
       # hack for now.. only showing the first 50 users
       # since the api seems to only support 50 at a time
