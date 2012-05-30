@@ -1,0 +1,10 @@
+%p.small Showing the first 50 users.
+%p
+  - for user in users_for(@common_followers,@uniq_tag)
+    .follower-line
+      %a{:href=>"/compare/data?user1=#{params['user1']}&user2=#{user.screen_name}",:class=>"complink"}
+        %img{:src=>"#{user.profile_image_url}"}
+        %span= user.screen_name
+        .tweet-line= user.status.text rescue ""
+    .clear
+      

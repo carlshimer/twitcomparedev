@@ -27,7 +27,7 @@ input { border-radius:12px }
 }
 
 #container {
-    width:1000px;
+    width:1200px;
     margin:0px auto;
 
 }
@@ -55,9 +55,13 @@ label { width:140px; float: left; }
     margin-top:20px;
 }
 
+#sidebar {
+    font-size:.8em;
+}
+
 .statblock {
     float:left;
-    width:200px;
+    width:100px;
 }
 
 .statblock .profile {
@@ -66,4 +70,46 @@ label { width:140px; float: left; }
 
 .header .section { 
     text-transform:uppercase;
+    font-weight:bold;
+    color:red;
+}
+
+
+#maincomparecontent,#sidebar {
+    float:left;
+}
+
+#maincomparecontent {
+    width:600px;
+    margin-right:20px;
+    height:500px;
+    overflow:auto;
+}
+
+p.small { font-size:.8em; opacity:0.8 }
+
+
+.follower-line {
+    text-shadow: 0 0 0;
+    font-size:.8em;
+    margin-bottom:10px;
+    height:50px;
+    
+}
+.follower-line .tweet-line { 
+    width:300px;
+    margin-left:20px;
+    color:black;
+    opacity:0.9;
+    padding-left:10px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    height:2.5em;
+}
+
+.follower-line span { padding-left:10px; width:100px; }
+
+.follower-line a, .follower-line img, .follower-line .tweet-line,.follower-line span {
+    float:left;
 }

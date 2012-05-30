@@ -26,6 +26,7 @@ def some_tests
   tweets.each do |x|
     rec = dates[x.created_at.to_date] ||= 0
     rec+=1
+    dates[x.created_at.to_date] = rec
   end
 
   # retweet_count is count per each tweet

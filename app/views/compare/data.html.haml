@@ -1,0 +1,42 @@
+#maincomparecontent
+  = render :partial => "common_followers"
+
+#sidebar
+  .comparesection
+    .statblock.header
+      %div{:style=>"width:48px;height:48px;padding-bottom:22px"}
+      %p.section Stats
+      %p Name
+      %p Followers
+      %p Following
+      %p retweets
+      %p mentions
+      %p Tweets / day
+
+    - @twit_users.each do |user|
+      .statblock
+        %img.profile{:src=>"#{user.profile_image_url}"}
+        %p &nbsp;
+        %p= user.screen_name  
+        %p= user.followers
+        %p= user.friends
+        %p= @tweets[user.screen_name].sum { |x| x.retweet_count} rescue 0
+        - # mentions are when you use the @user syntax in the tweet.
+        %p= @tweets[user.screen_name].map { |x| x.user_mentions.map { |x| x.id }}.flatten.compact.length rescue 0
+        %p= @tweet_stats[user.screen_name].map { |k,v| v}.sum / @tweet_stats[user.screen_name].length rescue 0
+
+  .clear
+  .comparesection
+    .statblock.header
+      %p.section Common
+      %p Followers
+      %p Following
+      %p Mentions
+      %p hashtags
+    .statblock
+      %p &nbsp;
+      %p= @common_followers.length
+      %p= @common_friends.length
+      %p= @common_mentions.length
+      %p= @common_hashtags.length
+
