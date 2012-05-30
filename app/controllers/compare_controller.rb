@@ -85,12 +85,15 @@ class CompareController < ApplicationController
     
     cursor = Twitter.send(method,target)
     final = Set.new(cursor.ids)
-    
+
     while true
       puts "using cursor #{cursor.next_cursor}"
       break if cursor.next_cursor == 0
       cursor = Twitter.send(method,target,{:cursor=>cursor.next_cursor})
       final |= Set.new(cursor.ids)
+      puts "exhaust length = #{final.length}"
+      # limit this right now at 30K.
+      break if final.length >= 30000
     end
     final
   end
