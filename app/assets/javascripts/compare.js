@@ -20,6 +20,7 @@ function onCompare() {
      $("#input2").attr("value").length == 0) {
     alert("Both users must be specified.");
   }
+    /*
   $.ajax({url:$.format("/compare/data?user1={0}&user2={1}",
                        $("#input1").attr("value"),
                        $("#input2").attr("value"))}).
@@ -27,14 +28,30 @@ function onCompare() {
     error(function(err) { 
             alert($.format("error. check your logs\n{0}",err)); 
           });  
+     */
+
+  $.pjax({url:$.format("/compare/data?user1={0}&user2={1}",
+                       $("#input1").attr("value"),
+                       $("#input2").attr("value")),
+          container:"#comparecontent",
+          timeout:15000});
+  return false;
 
 };
 
 // hook up events
 function loader() {
   // TODO: look up users from URL args.
+
   
   $("#comparebutton").click(onCompare);
+  $(document).
+    on('pjax:start',function() { $("#spinner").show(); }).
+    on('pjax:end',function() { $("#spinner").hide(); });
+
+
+  $.pjax.defaults.timeout = 15000;
+
 };
 
 
